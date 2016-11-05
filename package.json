@@ -1,0 +1,15 @@
+{
+  "name": "weather-webapp",
+  "version": "0.1.0",
+  "description": "Weather webapp from https://github.com/ReactjsProgram/react-fundamentals-curriculum",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mssio/weather-webapp.git"
+  },
+  "author": "Mario Suharja <mariostefanos@gmail.com> (http://www.mss.io)",
+  "license": "ISC"
+}
