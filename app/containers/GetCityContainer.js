@@ -5,6 +5,9 @@ var openWeatherMapHelpers = require('../utils/openWeatherMapHelpers');
 var GetCity = require('../components/GetCity');
 
 var GetCityContainer = React.createClass({
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
   getDefaultProps: function () {
     return {
       direction: 'column'
@@ -29,6 +32,9 @@ var GetCityContainer = React.createClass({
       .then(function (data) {
         console.log(data);
       });
+    this.context.router.push({
+      pathname: '/forecast/' + this.state.city
+    });
   },
   render: function () {
     return (
