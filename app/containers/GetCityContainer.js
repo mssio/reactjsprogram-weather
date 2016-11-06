@@ -1,5 +1,7 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
+
+var openWeatherMapHelpers = require('../utils/openWeatherMapHelpers');
 var GetCity = require('../components/GetCity');
 
 var GetCityContainer = React.createClass({
@@ -23,7 +25,10 @@ var GetCityContainer = React.createClass({
   },
   handleSubmitCity: function (e) {
     e.preventDefault();
-    console.log(this.state.city);
+    openWeatherMapHelpers.get5DayForecast(this.state.city)
+      .then(function (data) {
+        console.log(data);
+      });
   },
   render: function () {
     return (
