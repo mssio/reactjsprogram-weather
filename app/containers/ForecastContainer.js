@@ -11,7 +11,7 @@ var ForecastContainer = React.createClass({
     };
   },
   componentDidMount: function () {
-    openWeatherMapHelpers.get5DayForecast(this.state.city)
+    openWeatherMapHelpers.get5DayForecast(this.props.routeParams.city)
       .then(function (data) {
         this.setState({
           isLoading: false,
