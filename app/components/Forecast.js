@@ -63,7 +63,7 @@ function ForecastUI (props) {
             <DayItem
               key={listItem.dt}
               entry={listItem}
-              onSelectDate={props.onSelectDate.bind(null, listItem.dt)}
+              onSelectDate={props.onSelectDate.bind(null, listItem)}
             />
           );
         })}
