@@ -31,10 +31,11 @@ var ForecastContainer = React.createClass({
         })
       }.bind(this));
   },
-  handleSelectDate: function (weatherData) {
+  handleSelectDate: function (city, weatherData) {
     this.context.router.push({
       pathname: '/forecast/' + this.props.routeParams.city + '/detail',
       state: {
+        city: city,
         weatherData: weatherData
       }
     });
