@@ -4,6 +4,9 @@ var openWeatherMapHelpers = require('../utils/openWeatherMapHelpers');
 var Forecast = require('../components/Forecast');
 
 var ForecastContainer = React.createClass({
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
   getInitialState: function () {
     return {
       isLoading: true,
@@ -28,11 +31,17 @@ var ForecastContainer = React.createClass({
         })
       }.bind(this));
   },
+  handleSelectDate: function (date) {
+    this.context.router.push({
+      pathname: '/forecast/' + this.props.routeParams.city + '/detail/' + date
+    });
+  },
   render: function () {
     return (
       <Forecast
         isLoading={this.state.isLoading}
         weathersData={this.state.weathersData}
+        onSelectDate={this.handleSelectDate}
       />
     );
   }

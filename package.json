@@ -1,6 +1,6 @@
 {
   "name": "weather-webapp",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Weather webapp from https://github.com/ReactjsProgram/react-fundamentals-curriculum",
   "main": "index.js",
   "scripts": {
