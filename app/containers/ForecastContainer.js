@@ -11,7 +11,16 @@ var ForecastContainer = React.createClass({
     };
   },
   componentDidMount: function () {
-    openWeatherMapHelpers.get5DayForecast(this.props.routeParams.city)
+    this.makeRequest(this.props.routeParams.city)
+  },
+  componentWillReceiveProps: function (nextProps) {
+    this.setState({
+      isLoading: true,
+      weathersData: {}
+    }, this.makeRequest(nextProps.routeParams.city));
+  },
+  makeRequest: function (city) {
+    openWeatherMapHelpers.get5DayForecast(city)
       .then(function (data) {
         this.setState({
           isLoading: false,
